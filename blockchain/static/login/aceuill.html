@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>AZ site </title>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+
+</head>
+<style>
+    body{
+   margin: 0px;
+   padding: 0px;
+    box-sizing: border-box;
+   font-family: "Montserrat", sans-serif;
+}
+.partie1{
+	background-color:#067790;
+	width:100%;
+	height: 520px;
+	margin: 0px;
+	position: relative;
+
+
+}
+.marche  {
+  background:#000;
+  color: #fff;
+  width:100%;
+  height: 50px;
+  margin: 0px;
+   top: 20px;
+
+
+}
+.di{
+  background:#000;
+  color: #fff;
+  font-size: 20px;
+  line-height: 70px;
+  width:100%;
+  height: 70px;
+  margin-bottom: 50px;
+  word-spacing: 14px;
+
+   top: 20px;
+   text-align: top-center;
+   float: left;
+  bottom:50%;
+
+
+
+
+}
+
+}
+
+#main{
+
+  width: 100%;
+  height: 100vh;
+
+}
+nav{
+  width: 100%;
+  height: 80px;
+  background-color: #0007;
+
+  line-height: 50px;
+}
+nav ul{
+  float: right;
+  margin-right: 30px;
+}
+nav ul li{
+  list-style-type: none;
+  display: inline-block;
+  transition: 0.8s all;
+  font-size: 22px;
+
+}
+nav ul li:hover{
+  background-color: #f39d1a;
+}
+nav ul li a{
+  text-decoration: none;
+  color: #fff;
+  padding: 30px;
+}
+
+.logo{
+    width: 50%;
+    position: absolute;
+    margin: 10 auto ;
+    display: block;
+    top: 105px;
+    margin-left: 50%;
+    margin-right: 50%;
+
+}
+.container{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.container p {
+  font-size: 3rem;
+  padding: 1rem;
+  font-weight: bold;
+  letter-spacing: 0rem;
+  text-align: left;
+  overflow: hidden;
+  margin-top: -10px;
+  margin-left:  -1500px;
+
+
+
+}
+.container p span.typed-text {
+  font-weight: normal;
+  color: #fff;
+
+}
+.container p span.cursor {
+  display: inline-block;
+  background-color: #ccc;
+  margin-left: 0.1rem;
+  width: 3px;
+  animation: blink 1s infinite;
+}
+.container p span.cursor.typing {
+  animation: none;
+}
+@keyframes blink {
+  0% {
+    background-color: #ccc;
+  }
+  20% {
+    background-color: #ccc;
+  }
+  40% {
+    background-color: transparent;
+  }
+  60% {
+    background-color: transparent;
+  }
+  80% {
+    background-color: #ccc;
+  }
+}
+h1{
+  text-align: center;
+  font-size: 60px;
+  margin-top: -600px;
+  font-family: monotype corsiva; ;
+  animation :abcd 15s infinite;
+
+
+
+}
+@keyframes abcd{
+  0%{
+    margin-left: 100px;
+  }
+  10%{
+    margin-left: 50px;
+  }
+  20%{
+    margin-right: 100px;
+  }
+    30%{
+    margin-right: 50px;
+  }
+    40%{
+    margin-left: 100px;
+  }
+  50%{
+    margin-left: 50px;
+  }
+  60%{
+    margin-right: 100px;
+  }
+    70%{
+    margin-right: 50px;
+  }
+    80%{
+    margin-left: 100px;
+  }
+  90%{
+    margin-left: 50px;
+  }
+100%{
+    margin-right: 100px;
+  }
+}
+.partie2{
+  width:100%;
+  height: 500px;
+  margin: 0px;
+  position: relative;
+  background: ;
+}
+.slidershow{
+  width: 900px;
+  height: 400px;
+  overflow: hidden;
+}
+.middele{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.navigation{
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+}
+.bar{
+  width: 50px;
+  height: 10px;
+  border:2px solid #000;
+  margin: 6px;
+  cursor: pointer;
+  transition: 0.4s;
+
+}
+.bar:hover{
+  background: linear-gradient(#08aeea, #2af598);
+}
+input[name="r"]{
+  position: absolute;
+  visibility: hidden;
+
+}
+.slides{
+  width: 500%;
+  height: 100%;
+  display:flex;
+}
+.slide{
+  width: 20%;
+  transition: 0.6s;
+
+}
+.slide p{
+  justify-content:  center;
+  font-size: 40px;
+  text-align: center;
+
+}
+.slide img{
+  width: 100%;
+  height: 100%;
+
+}
+#r1:checked ~ .s1{
+  margin-left:0;
+
+}
+#r2:checked ~ .s1{
+  margin-left:-20%;
+
+}
+#r3:checked ~ .s1{
+  margin-left:-40%;
+
+}
+#r4:checked ~ .s1{
+  margin-left:-60%;
+
+}
+#r5:checked ~ .s1{
+  margin-left:-80%;
+
+}
+.partie3{
+ background: #000;
+    width:100%;
+     height: 324px;
+      display: flex;
+      text-align: left;
+      background-size: cover;
+      color: #fff;
+}
+.partie3 img{
+  position: absolute;
+  left: 25%;
+}
+.partie4{
+    width:100%;
+    height: 500px;
+   left:100%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    background: #fff;
+}
+
+.card{
+    height: 370px;
+    width: 310px;
+    position: relative;
+    transition: all 1s linear;
+    transform-style: preserve-3d;
+}
+
+.front,
+.back{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center ;
+    align-items: center;
+
+    font-family: 'Lobster', cursive;
+    border-radius: 10px;
+    position: absolute;
+}
+
+.front{
+    background: linear-gradient(#08aeea, #2af598);
+    z-index: 2;
+    backface-visibility: hidden;
+     font-size: 20px;
+     text-align: center;
+}
+
+.back{
+    background: #307682;
+    z-index: 1;
+    transform: rotateY(180deg);
+       font-size: 16px;
+       text-align: center;
+       color: #ffff;
+}
+
+.container1:hover .card{
+    transform: rotateY(180deg);
+}
+
+.container1{
+    perspective: 1000px;
+    padding: 10px;
+}
+body{
+  margin: 0;
+  padding: 0;
+
+}
+.search-box{
+  position: absolute;
+  top: 8%;
+  left: 25%;
+  transform: translate(-50%,-50%);
+  background: #2f3640;
+  height: 40px;
+  border-radius: 40px;
+  padding: 10px;
+}
+.search-box:hover > .search-txt{
+  width: 240px;
+  padding: 0 6px;
+}
+.search-box:hover .search-btn{
+  background: white;
+}
+.search-btn{
+  color: #e84118;
+  float: right;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #2f3640;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.4s;
+}
+.search-txt{
+  border: none;
+  background: none;
+  outline: none;
+  float: left;
+  padding: 0;
+  color: white;
+  font-size: 16px;
+  transition: 0.4s;
+  line-height: 40px;
+  width: 0px;
+}
+.transparent{
+ background-color: #067790;
+ border-width: 2px;
+ border-color: #000;
+ border-style: solid;
+ border-radius: 10px;
+ right:  50%;
+ margin: 10px;
+
+ width: 97%;
+  height: 200px;
+}
+.textOverImage{
+    position:relative;
+    width:300px;
+    height:300px;
+    float:left;
+    margin:30px;
+    left:50px;
+    background-size:100%;
+    background-position:center;
+    transition:0.5s;
+  }
+
+  .textOverImage:hover{
+    background-size:110%;
+  }
+
+  .textOverImage:after{
+    position:absolute;
+    top:100%;
+    bottom:0;
+    left:0;
+    right:0;
+    white-space:pre-wrap;
+    overflow:hidden;
+    background-color:rgba(0,0,0,0.6);
+    color:#fff;
+    padding:0 8px;
+    opacity:0;
+    content:attr(data-text);
+    transition:0.5s;
+  }
+
+  .textOverImage:hover:after{
+    opacity:1;
+    top:0;
+    padding:8px;
+  }
+
+  .textOverImage:first-line{
+    color:#fff;
+    font-weight:bold;
+    font-size:1.5em;
+  }
+.textOverImage{
+    position:relative;
+    width:300px;
+    height:300px;
+    float:left;
+    margin:4px;
+    background-size:100%;
+    background-position:center;
+    transition:0.5s;
+  }
+
+  .textOverImage:hover{
+    background-size:110%;
+  }
+
+  .textOverImage:after{
+    position:absolute;
+    top:90%;
+    bottom:0;
+    left:0;
+    right:0;
+    white-space:pre-wrap;
+    overflow:hidden;
+    background-color:rgba(0,0,0,0.3);
+    color:#fff;
+    padding:0 8px;
+    content:attr(data-text);
+    transition:0.5s;
+  }
+
+  .textOverImage:hover:after{
+    top:0;
+    padding:8px;
+    background-color:rgba(0,0,0,0.6);
+  }
+
+  .textOverImage:first-line{
+    color:#fff;
+    font-weight:bold;
+    font-size:1.5em;
+  }
+
+
+  @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+footer{
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  background: #111;
+}
+.main-content{
+  display: flex;
+}
+.main-content .box{
+  flex-basis: 50%;
+  padding: 10px 20px;
+}
+.box h2{
+  font-size: 1.125rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.box .content{
+  margin: 20px 0 0 0;
+  position: relative;
+}
+.box .content:before{
+  position: absolute;
+  content: '';
+  top: -10px;
+  height: 2px;
+  width: 100%;
+  background: #1a1a1a;
+}
+.box .content:after{
+  position: absolute;
+  content: '';
+  height: 2px;
+  width: 15%;
+  background: #f12020;
+  top: -10px;
+}
+.left .content p{
+  text-align: justify;
+}
+.left .content .social{
+  margin: 20px 0 0 0;
+}
+.left .content .social a{
+  padding: 0 2px;
+}
+.left .content .social a span{
+  height: 40px;
+  width: 40px;
+  background: #1a1a1a;
+  line-height: 40px;
+  text-align: center;
+  font-size: 18px;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+.left .content .social a span:hover{
+  background: #f12020;
+}
+.center .content .fas{
+  font-size: 1.4375rem;
+  background: #1a1a1a;
+  height: 45px;
+  width: 45px;
+  line-height: 45px;
+  text-align: center;
+  border-radius: 50%;
+  transition: 0.3s;
+  cursor: pointer;
+}
+.center .content .fas:hover{
+  background: #f12020;
+}
+.center .content .text{
+  font-size: 1.0625rem;
+  font-weight: 500;
+  padding-left: 10px;
+}
+.center .content .phone{
+  margin: 15px 0;
+}
+.right form .text{
+  font-size: 1.0625rem;
+  margin-bottom: 2px;
+  color: #656565;
+}
+.right form .msg{
+  margin-top: 10px;
+}
+.right form input, .right form .msgForm{
+  width: 100%;
+  font-size: 1.0625rem;
+  background: #151515;
+  padding-left: 10px;
+  border: 1px solid #222222;
+}
+.msg{
+  width: 100%;
+background: #151515;
+}
+
+.right form input:focus,
+.right form .msgForm:focus{
+  outline-color: #3498db;
+}
+.right form input{
+  height: 35px;
+
+}
+.right form .btn{
+  margin-top: 10px;
+}
+.right form .btn button{
+  height: 40px;
+  width: 100%;
+  border: none;
+  outline: none;
+  background: #f12020;
+  font-size: 1.0625rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: .3s;
+}
+.right form .btn button:hover{
+  background: #000;
+}
+.bottom center{
+  padding: 5px;
+  font-size: 0.9375rem;
+  background: #151515;
+}
+.bottom center span{
+  color: #656565;
+}
+.bottom center a{
+  color: #f12020;
+  text-decoration: none;
+}
+.bottom center a:hover{
+  text-decoration: underline;
+}
+
+.partie6{
+  position: relative;
+  width: 100%;
+  height: 350px;
+   color: #d9d9d9;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+</style>
+<body>
+<div class="partie1">
+	   <div id="main">
+        <nav>
+          <img src="/static/image/am.gif" width="100" height="80">
+          <ul>
+              <li><a href="#">Accueil</a></li>
+            <li><a href="/static/login/login1.html">Crée wallet</a></li>
+            <li><a href="/static/guide/guide.html">Guide</a></li>
+            <li><a href="/static/login/login.html">S'inscrire</a></li>
+            <li><a href="/static/login/login.html">connexion</a></li>
+            <div class="search-box">
+    <input class="search-txt" type="txt" name="" placeholder="Type to search">
+    <a class="search-btn" href="#">
+      <img src="/static/image/Search-icon1.png">
+    </a>
+
+  </div>
+        </nav>
+
+      </div>
+
+      <div class="logo" align="right">
+          <img src="/static/image/b.png"  >
+      </div>
+      <div class="marche" >
+        <div class="di "> <marquee  direction="rigth" scrollamount="15" vspace="10" align="center"><img src="/static/image/bourse.png">les proportion de marche aujourd hui: <img src="/static/image/bitc.png">BTC : 8,543<img src="/static/image/euro.png">   :-0,64%<img src="/static/image/fr.png">;<img src="/static/image/eth.png">ETH;212.65<img src="/static/image/euro.png">     :-1.7% <img src="/static/image/fr.png">; <img src="/static/image/tlc.png"> LCT :40.81 <img src="/static/image/euro.png"> :-1.73% <img src="/static/image/fr.png">;  <img src="/static/image/bts.png">0.01936 <img src="/static/image/euro.png"> :-0.44% <img src="/static/image/fr.png">; <img src="/static/image/xmp.png"> XRP:0.18 <img src="/static/image/euro.png">: -0.017% <img src="/static/image/fr.png">;  <img src="/static/image/DASH.png"> DASH:68.48 <img src="/static/image/euro.png">    :-0.33%<img src="/static/image/fr.png">; <img src="/static/image/xmr.png">XMR:59.22 <img src="/static/image/euro.png">:-0.17% <img src="/static/image/fr.png">;   <img src="/static/image/pay.png"> PAY:0.0439<img src="/static/image/euro.png">:-2.06% <img src="/static/image/fr.png">;  <img src="/static/image/zec.png">ZEC:45.39 <img src="/static/image/euro.png">:-1.93% <img src="/static/image/fr.png">;<img src="/static/image/omg.png"> :1.49 <img src="/static/image/euro.png">  :+0.81% <img src="/static/image/fv.png"></marquee>
+        </div>
+      </div>
+
+       <div class="container"  align="left">
+           <p> <span class="typed-text"></span><span class="cursor">&nbsp;</span></p>
+
+
+  <script type="text/javascript">
+    const typedTextSpan = document.querySelector(".typed-text");
+const cursorSpan = document.querySelector(".cursor");
+
+const textArray = [" Blockchain", "بلوك تشين", "Chain de block", "区块链","μπλοκ αλυσίδας","블록 체인"];
+const typingDelay = 200;
+const erasingDelay = 100;
+const newTextDelay = 2000; // Delay between current and next text
+let textArrayIndex = 0;
+let charIndex = 0;
+
+function type() {
+  if (charIndex < textArray[textArrayIndex].length) {
+    if(!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
+    typedTextSpan.textContent += textArray[textArrayIndex].charAt(charIndex);
+    charIndex++;
+    setTimeout(type, typingDelay);
+  }
+  else {
+    cursorSpan.classList.remove("typing");
+    setTimeout(erase, newTextDelay);
+  }
+}
+
+function erase() {
+  if (charIndex > 0) {
+    if(!cursorSpan.classList.contains("typing")) cursorSpan.classList.add("typing");
+    typedTextSpan.textContent = textArray[textArrayIndex].substring(0, charIndex-1);
+    charIndex--;
+    setTimeout(erase, erasingDelay);
+  }
+  else {
+    cursorSpan.classList.remove("typing");
+    textArrayIndex++;
+    if(textArrayIndex>=textArray.length) textArrayIndex=0;
+    setTimeout(type, typingDelay + 1100);
+  }
+}
+
+document.addEventListener("DOMContentLoaded", function() { // On DOM Load initiate the effect
+  if(textArray.length) setTimeout(type, newTextDelay + 250);
+});
+  </script>
+  </div>
+  <h1 align="left">
+    BIENVENU A AZ SITE
+  </h1>
+</div>
+<br>
+<br>
+<div class="partie5" align="center">
+  <div class="textOverImage" style="background-image:url(/static/image/bitcoin.jpg) " data-text="Bitcoin
+Créé par Satoshi Nakamoto en 2008, Bitcoin est la Blockchain originelle dont le consensus repose sur la preuve de travail (PoW : proof of work) des mineurs. Elle sert principalement aujourd’hui de valeur refuge numérique. Bitcoin permet également de stocker une petite quantité d’information dans chaque transaction (80 octets) de manière immuable. Il est aussi possible d’utiliser Bitcoin pour émettre et faire circuler des jetons (colored coin) pouvant être l’émanation sur la chaine d’un actif sous-jacent (action, titre de propriété, matière première…).
+"></div>
+
+  <div class="textOverImage" style="background-image:url(/static/image/etheruim.jpg) " data-text="Ethereum
+Créé par Vitalik Buterin en 2014, Ethereum permet, au-delà des fonctions de Bitcoin, de créer des contrats intelligents (smart-contract), c’est-à-dire des comptes pouvant transporter des ethers (crypto monnaie) pilotés par du code informatique. En 2017, les smart-contract sont principalement utilisés pour l’émission de jetons et les levées de fonds directement sur la Blockchain.
+" ></div>
+<div class="textOverImage" style="background-image:url(/static/image/hyber.jpg) " data-text="Hyperledger
+Hyperledger est une plateforme open source de développement de Blockchain. Ce projet, initié en décembre 2015 par la fondation Linux, a été rejoint plus tard par IBM. Le développement s’y fait essentiellement en langage Go.
+
+" ></div>
+<div class="textOverImage" style="background-image:url(/static/image/tend.jpg) ; background-repeat:no-repeat;background-size:cover; "data-text="TENDERMINt
+Tendermint est une plateforme open source de Blockchain permettant l’exécution de smart-contract multi-langages dont l’algorithme de consensus PBFT résiste à la panne, même si 1/3 des acteurs sont malveillants ou déconnectés.
+" ></div>
+<div class="textOverImage" style="background-image:url(/static/image/zero.jpg) ; background-repeat:no-repeat;background-size:cover; " data-text="Zero Cash
+Z-Cash est une Blockchain permettant les transactions anonymes grâce à la technologie cryptographique innovante zk-SNARK.Sur le réseau Z-cash, il existe 2 types d’adresse : les transparentes « t-address » et les protégées « z-addresses ». Les transactions entre les premières sont similaires à celle de Bitcoin, celles qui se font sur la seconde en revanche sont inscrites dans le registre de manière chiffrée. Un algorithme dit « de preuve à divulgation nulle de connaissance » (zero-knowledge proof) garantit l’intégrité de ces transactions.
+" ></div>
+<div class="textOverImage" style="background-image:url(/static/image/dash.jpg) ; background-repeat:no-repeat;background-size:cover; " data-text="Zero Cash
+Z-Cash est une Blockchain permettant les transactions anonymes grâce à la technologie cryptographique innovante zk-SNARK.Sur le réseau Z-cash, il existe 2 types d’adresse : les transparentes « t-address » et les protégées « z-addresses ». Les transactions entre les premières sont similaires à celle de Bitcoin, celles qui se font sur la seconde en revanche sont inscrites dans le registre de manière chiffrée. Un algorithme dit « de preuve à divulgation nulle de connaissance » (zero-knowledge proof) garantit l’intégrité de ces transactions.
+" ></div>
+<div class="textOverImage" style="background-image:url(/static/image/XRP.jpg) ; background-repeat:no-repeat;background-size:cover; " data-text="Zero Cash
+Z-Cash est une Blockchain permettant les transactions anonymes grâce à la technologie cryptographique innovante zk-SNARK.Sur le réseau Z-cash, il existe 2 types d’adresse : les transparentes « t-address » et les protégées « z-addresses ». Les transactions entre les premières sont similaires à celle de Bitcoin, celles qui se font sur la seconde en revanche sont inscrites dans le registre de manière chiffrée. Un algorithme dit « de preuve à divulgation nulle de connaissance » (zero-knowledge proof) garantit l’intégrité de ces transactions.
+" ></div>
+<div class="textOverImage" style="background-image:url(/static/image/mro.jpg) ; background-repeat:no-repeat;background-size:cover; " data-text="Zero Cash
+Z-Cash est une Blockchain permettant les transactions anonymes grâce à la technologie cryptographique innovante zk-SNARK.Sur le réseau Z-cash, il existe 2 types d’adresse : les transparentes « t-address » et les protégées « z-addresses ». Les transactions entre les premières sont similaires à celle de Bitcoin, celles qui se font sur la seconde en revanche sont inscrites dans le registre de manière chiffrée. Un algorithme dit « de preuve à divulgation nulle de connaissance » (zero-knowledge proof) garantit l’intégrité de ces transactions.
+" ></div>
+</div>
+<div class="partie3">
+  <img src="/static/image/panorama.png" align="center">
+  </div>
+
+
+
+  <div class="partie2">
+        <div class="slidershow middele">
+    <div class="slides">
+      <input type="radio" name="r" id="r1" checked>
+      <input type="radio" name="r" id="r2">
+      <input type="radio" name="r" id="r3">
+      <input type="radio" name="r" id="r4">
+      <input type="radio" name="r" id="r5">
+      <div class="slide s1">
+        <img src="/static/image/aa.gif" width="200%">
+      </div>
+      <div class="slide ">
+        <img src="/static/image/gui.png">
+      </div>
+      <div class="slide ">
+        <img src="/static/image/confiance.png">
+      </div>
+      <div class="slide ">
+        <img src="/static/image/securite.png">
+      </div>
+      <div class="slide ">
+      <img src="/static/image/block.png">
+    </div>
+    </div>
+  </div>
+    <div class="navigation">
+      <label for="r1" class="bar"> </label>
+      <label for="r2" class="bar"> </label>
+      <label for="r3" class="bar"> </label>
+      <label for="r4" class="bar"> </label>
+      <label for="r5" class="bar"> </label>
+    </div>
+    </div>
+    <div class="partie4"  >
+    <div class="container1">
+       <div class="card">
+           <div class="front">La blockchain peut-elle être utilisée en dehors du champ de la crypto-monnaie?</div>
+           <div class="back">Oui ,Demain  la blockchain pourrait bien  être la technologie phare à  l’œuvre dans de nombreux domaines :
+L’authenticité des diplômes, le vote, la location ou la vente des voitures, l’internet des objets, les contrats intelligents, la musique, santé, assurance…….
+</div>
+       </div>
+   </div>
+<br>
+<div class="container1">
+       <div class="card">
+           <div class="front">Quel est le principe de la blockchain ? </div>
+           <div class="back">Concrètement, l’objectif de la blockchain est de stocker et d’échanger des informations (initialement, de la monnaie virtuelle) de manière sécurisée. On pourrait définir la blockchain comme une immense base de données contenant l’historique de tous les échanges effectués entre ses utilisateurs depuis sa création.</div>
+       </div>
+   </div>
+
+<div class="container1">
+       <div class="card">
+           <div class="front">Quelqu'un peut-il démarrer une blockchain?</div>
+           <div class="back">Oui, en principe, toute personne ayant des connaissances informatiques peut le faire, mais le début est la partie facile. Le succès et la valeur de la blockchain proviennent de sa taille et pour la rendre attrayante pour les utilisateurs, le créateur de la nouvelle blockchain doit pouvoir la développer rapidement en ajoutant autant de blocs que possible à la chaîne. La mise à l'échelle de la blockchain est appelée amorçage et elle se fait souvent par le biais des soi-disant offres de pièces initiales aux premiers stades de la création d'une crypto-monnaie.</div>
+       </div>
+   </div>
+
+<div class="container1">
+       <div class="card">
+           <div class="front">Qu'appoerte la blockchain aux entreprises?</div>
+           <div class="back">Pour accompagner les projets actuels ou futurs et faire face au manque de candidats qualifiés dans la blockchain, nombre d’entreprises se doivent de former une partie de leurs employés sur cette technologie et ses possibilités d’utilisation</div>
+       </div>
+   </div>
+</div>
+
+<div class="partie6">
+<footer>
+      <div class="main-content">
+        <div class="left box">
+          <h2>
+About us</h2>
+<div class="content">
+            <p>
+Notre site est le meilleur pour supprimer votre intermediaire,N hesite pas de s y inscrire   .</p>
+<div class="social">
+              <a href="https://facebook.com/coding.np"><span class="fab fa-facebook-f"></span></a>
+              <a href="#"><span class="fab fa-twitter"></span></a>
+              <a href="https://instagram.com/coding.np"><span class="fab fa-instagram"></span></a>
+              <a href="https://youtube.com/c/codingnepal"><span class="fab fa-youtube"></span></a>
+            </div>
+</div>
+</div>
+<div class="center box">
+          <h2>
+Address</h2>
+<div class="content">
+            <div class="place">
+              <span class="fas fa-map-marker-alt"></span>
+              <span class="text">Algerie, Aine Temouchent</span>
+            </div>
+<div class="phone">
+              <span class="fas fa-phone-alt"></span>
+              <span class="text">+213-043775116</span>
+            </div>
+<div class="email">
+              <span class="fas fa-envelope"></span>
+              <span class="text">ahmedzeroual@gmail.com</span>
+            </div>
+</div>
+</div>
+<div class="right box">
+          <h2>
+Contactez Nous</h2>
+<div class="content">
+            <form action="#">
+              <div class="email">
+                <div class="text">
+Email *</div>
+<input type="email" required>
+              </div>
+<div class="msg">
+                <div class="text">
+Message *</div>
+
+<textarea id=".msgForm" rows="2" cols="25" class="msg" required></textarea> <!-- replace this changeit name to textarea -->
+
+              <br />
+<div class="btn">
+<button type="submit">Envoyer</button>
+              </div>
+<div class="bottom">
+<center>
+          <span class="credit">Creer Par <a href="https://youtube.com/c/codingnepal">AZ Communutie</a> | </span>
+          <span class="far fa-copyright"></span> 2020 Tous les driots reserver.
+        </center>
+</div>
+</div></form></div></div></div></footer></div>
+</body>
+</html>

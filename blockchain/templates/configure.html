@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Blockchain Noeud</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/vendor/DataTables/css/datatables.min.css" rel="stylesheet">
+    <link href="/static/css/custom.css" rel="stylesheet">
+
+  </head>
+
+  <body style=" background-image:url(/static/image/noeud3.jpg); background-repeat:no-repeat;background-size:cover ;">
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#"><i>Blockchain Noeud</i></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/index"><font style="font-size:22px;"> <i>Mine</i></font></a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="/configure"><font style="font-size:22px;"><i>Configurer</i></font>
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <br>
+    <br>
+    <br>
+    <!-- Add noeuds -->
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+
+          <div class="card-body">
+            <h3 class="card-title"><font style="color:#80d0d0"><center>Ajout des noeuds </center></font></h3>
+            <br>
+            <p class="card-text"><font style="color:#fff;font-siz:20px;">Entrez la liste d'URL des nœuds Blockchain séparés par une virgule et cliquez sur le bouton <i>"Ajouter"</i> pour les ajouter à la liste des nœuds:</font></p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <div class="container alert alert-secondary">
+      <form id="noeud_form">
+        <div class="row">
+          <label class="col-sm-2"><b>URLs Noeuds :</b></label>
+          <div class="col-sm-10">
+            <input type="text" name="noeuds" id="noeuds" rows="2" class="form-control">
+          </div>
+        </div>
+
+        <br>
+
+ </form>
+    </div>
+            <center><input type="button" id="add_noeud_button" class="btn btn-primary btn-lg" value="Ajouter"></center>
+
+
+
+    <hr style="background-color:#fff">
+
+    <!-- List of noeuds -->
+    <div class="container">
+      <div class="row">
+
+        <div class="col-lg-12">
+          <div class="card-body">
+            <h4 class="card-title"><font style="color:#fff;">Vous pouvez récupérer des données Blockchain à partir des nœuds suivants:</font></h4>
+
+          </div>
+        </div>
+
+        <div class="col-lg-12" id="list_noeuds">
+
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="/static/vendor/jquery/jquery.min.js"></script>
+    <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="/static/vendor/DataTables/js/datatables.min.js"></script>
+    <script src="/static/vendor/DataTables/js/ellipsis.js"></script>
+
+
+    <script>
+      $(function(){
+
+          $("#add_noeud_button").click(function () {
+
+
+            $.ajax({
+              url: "/noeuds/registre",
+              type: "POST",
+              dataType : 'json',
+              data: $('#noeud_form').serialize(),
+              success: function(response){
+
+                console.log(response);
+                document.getElementById("noeuds").value = "";
+                window.location.reload();
+
+              },
+              error: function(error){
+                console.log(error);
+              }
+            });
+
+          });
+
+
+        $.ajax({
+          url: "/noeuds/get",
+          type: 'GET',
+          success: function(response){
+
+            console.log(response['noeuds']);
+            var noeud = "";
+
+            for (i = 0; i < response['noeuds'].length; i++) {
+              //noeud = "<li>" + response['noeuds'][i] + "</li>";
+              noeud = "<li> <a href=http://" + response['noeuds'][i] + ">" + response['noeuds'][i] +"</a></li>";
+              document.getElementById("list_noeuds").innerHTML += noeud;
+
+            };
+
+          },
+          error: function(error){
+            console.log(error);
+          }
+        });
+
+
+      })
+
+
+
+
+
+    </script>
+
+
+
+  </body>
+
+</html>
