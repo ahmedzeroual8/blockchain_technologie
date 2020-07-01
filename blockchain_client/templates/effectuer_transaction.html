@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Blockchain Client</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="/static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/css/custom.css" rel="stylesheet">
+
+  </head>
+
+  <body style=" background-image:url(/static/image/ab.jpg); background-repeat:no-repeat;background-size:cover;" >
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#">Blockchain Client</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="/index">Crée Wallet
+              </a>
+            </li>
+            <li class="nav-item active">
+              <a class="nav-link" href="/effectuer/transaction"><i>Effectuer Transaction</i></a>
+              <span class="sr-only">(current)</span>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/consulter/transactions"><i>Consulter Transaction</i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <br>
+    <br><br>
+
+
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+
+          <div class="card-body">
+           <font class="card-title" color="#fefee2">
+             <h1><font style="font-size:45px"> <center>L'envoie d'une transaction</center></font></h1></font>
+            <p class="card-text" >
+              <font color="#f4edde " style="font-size:30px;"> Entrer les details de votre transaction puis appuyer sur le bouton <i><font color="#ff7f50">"generer transaction "</font></i>  a fin qu'elle sera transmise au destinataire .</font>  </p>
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <br>
+
+
+    <div class="container alert alert-secondary">
+    <form id="transaction_form">
+
+        <div class="row">
+          <label class="col-sm-2">Clé Public Emetteur :</label>
+          <div class="col-sm-10">
+            <input type="text" name="Cle_Public_Emetteur" id="Cle_Public_Emetteur" rows="2" class="form-control">
+
+          </div>
+        </div>
+
+        <br>
+
+        <div class="row">
+          <label class="col-sm-2">Clé Prive Emetteur</label>
+          <div class="col-sm-10">
+            <input type="text" name="Cle_Prive_Emetteur" id="Cle_Prive_Emetteur" rows="2" class="form-control">
+          </div>
+        </div>
+
+        <br>
+
+        <div class="row">
+          <label class="col-sm-2">Clé Public recepteur:</label>
+          <div class="col-sm-10">
+            <input type="text" name="Cle_Public_recepteur" id="Cle_Public_recepteur" rows="2" class="form-control">
+          </div>
+        </div>
+
+        <br>
+
+        <div class="row">
+          <label class="col-sm-2">La valeur a transmettre :</label>
+          <div class="col-sm-10">
+            <input type="text" name="montant" id="montant" rows="2" class="form-control">
+          </div>
+        </div>
+
+        <br>
+
+        <div class="row">
+          <div class="col-lg-12 text-center">
+            <input type="button" id="generate_transaction" class="btn btn-primary btn-lg" value="Generer Transaction">
+          </div>
+        </div>
+
+        <br>
+
+    </form>
+    </div>
+
+
+    <!-- Modal -->
+    <div class="modal modal-alert fade" id="basicModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+      <div class="modal-dialog">
+
+        <div class="modal-content">
+
+          <div class="modal-header">
+            <div class="modal-title col-md-10">si vous ete sur de votre donée veuillez cliquer sur "confirmer" a fin de finalize votre transaction sinon cliquer sur le bouton "cancel".</div>
+            <button type="button" class="close col-md-2" data-dismiss="modal" aria-hidden="true">&times;</button>
+          </div>
+
+          <div class="modal-body">
+
+            <form id="confirmation_transaction_form">
+
+                <div class="row">
+                  <label class="col-sm-12">Clé Public Emetteur:</label>
+                  <div class="col-sm-12">
+                    <input type="text" name="Cle_Public_Emetteur" id="confirmation_Cle_Public_Emetteur" rows="2" class="form-control" readonly>
+
+                  </div>
+                </div>
+
+                <div class="row">
+                  <label class="col-sm-12">Clé Public recepteur:</label>
+                  <div class="col-sm-12">
+                    <input type="text" name="Cle_Public_recepteur" id="confirmation_Cle_Public_recepteur" rows="2" class="form-control" readonly>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <label class="col-sm-12">La valeur a transmettre :</label>
+                  <div class="col-sm-12">
+                    <input type="text" name="montant" id="confirmation_montant" rows="2" class="form-control" readonly>
+                  </div>
+                </div>
+
+                <div class="row">
+                  <label class="col-sm-12">Transaction Signature:</label>
+                  <div class="col-sm-12">
+                    <input type="text" name="signature" id="transaction_signature" rows="2" class="form-control" readonly>
+                  </div>
+                </div>
+
+            </form>
+
+
+            <div class="row">
+              <label class="col-sm-12">URL blockchain Noeud:</label>
+              <div class="col-sm-12">
+                <input type="text" name="node_url" id="node_url" rows="2" class="form-control" value="http://127.0.0.1:5001">
+              </div>
+            </div>
+
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+            <button type="button" id="button_confirm_transaction1" class="btn btn-success">Confirm Transaction</button>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+
+    <!-- Alert Message for successful transaction -->
+    <div class="modal modal-alert fade" id="success_transaction_modal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          </div>
+
+          <div class="modal-body">
+            <div class="alert alert-success" role="alert">
+              <h4 class="alert-heading">Transaction réussite!</h4>
+              <p>Vous avez terminé avec succès votre transaction. elle sera ajouté au bloc suivant..</p>
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" id="button_confirm_transaction" class="btn btn-success" data-dismiss="modal">OK</button>
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="/static/vendor/jquery/jquery.min.js"></script>
+    <script src="/static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+    <script>
+
+      $(function () {
+          $("#generate_transaction").click(function () {
+
+            $.ajax({
+              url: "/generer/transaction",
+              type: "POST",
+              dataType : 'json',
+              data: $('#transaction_form').serialize(),
+              success: function(response){
+
+                document.getElementById("confirmation_Cle_Public_Emetteur").value = response["transaction"]["Cle_Public_Emetteur"];
+                document.getElementById("confirmation_Cle_Public_recepteur").value = response["transaction"]["Cle_Public_recepteur"];
+                document.getElementById("confirmation_montant").value = response["transaction"]["valeur"];
+                document.getElementById("transaction_signature").value = response["signature"];
+
+                $("#basicModal").modal('show');
+
+              },
+              error: function(error){
+                console.log(error);
+              }
+            });
+
+          });
+      });
+
+
+      $(function () {
+          $("#button_confirm_transaction1").click(function () {
+            //console.log($('#confirmation_transaction_form').serialize());
+
+
+            $.ajax({
+              url: document.getElementById("node_url").value + "/transactions",
+              type: "POST",
+              headers: {'Access-Control-Allow-Origin':'*'}, <!--pour qu'on puisse l'executer sur une meme machine -->
+              dataType : 'json',
+              data: $('#confirmation_transaction_form').serialize(),
+              success: function(response){
+
+                //reset both forms
+                $("#transaction_form")[0].reset();
+                $("#confirmation_transaction_form")[0].reset();
+
+                //clean text boxes
+                 $("#Cle_Public_Emetteur").val("");
+                $("#Cle_Prive_Emetteur").val("");
+                $("#Cle_Public_recepteur").val("");
+                $("#montant").val("");
+
+                $("#basicModal").modal('hide');
+                $("#success_transaction_modal").modal('show');
+
+              },
+              error: function(error){
+                console.log(error);
+              }
+            });
+
+          });
+      });
+
+    </script>
+
+
+  </body>
+
+</html>
